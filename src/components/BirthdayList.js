@@ -3,22 +3,15 @@ import { peopleData } from "../peopleData";
 
 function BirthdayList (){
     const [people, setPeople] = useState(peopleData);
-    const birthdaysToday = 5
-    const [birthdays, setBirthdays] = useState(birthdaysToday);
     const clickHandler = () =>{
       setPeople([])
-      birthdayReset()
-    }
-  
-    const birthdayReset = () =>{
-      setBirthdays(0)
     }
 
     return (
       <>
         <main>
           <section className="container">
-            <h3>{birthdays} birthdays today</h3>
+            <h3>{people.length} birthdays today</h3>
             {people.map((person) => {
               const { id, name, age, image } = person;
               return (
